@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao 5 letra B</title>
+    <style>
+        canvas{
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas width="460" height="280"></canvas>
+    
+
+    <script>
+        let canvas = document.querySelector("canvas");
+        let contexto = canvas.getContext("2d");
+        contexto.lineWidth = 3;
+
+        for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 3; j++) {
+                //retangulo em volta do triângulo
+                contexto.beginPath();
+                contexto.rect(50 + (i * 60), 50 + (j * 60), 50, 50);
+                contexto.stroke();
+                contexto.fillStyle = 'white';
+                contexto.fill();
+                contexto.strokeStyle = '#2D3970';
+                contexto.closePath();
+                contexto.stroke();
+
+                //triângulo dentro do quadrado
+                contexto.beginPath();
+                contexto.moveTo(75 + (i*60), 63 + (j*60));
+                contexto.lineTo(60 + (i*60), 86 + (j*60));
+                contexto.lineTo(90 + (i*60), 86 + (j*60));
+                contexto.fillStyle = 'white';
+                contexto.fill();
+                contexto.closePath();
+                contexto.strokeStyle = "#4D75F5";
+                contexto.stroke();
+            }
+        }
+    </script>
+</body>
+
+</html>

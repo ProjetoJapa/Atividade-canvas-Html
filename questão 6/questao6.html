@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Canvas Básico pt.01</title>
+    <meta charset="utf-8">
+</head>
+<style>
+    canvas {
+        background-color: rgba(128, 128, 128, 0.527);
+        border: 3px solid black;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+
+        const CodigoTeclaCima = 38, CodigoTeclaBaixo = 40, CodigoTeclaEsquerda = 37, CodigoTeclaDireita = 39;
+        var movimentacaoEsquerda = movimentacaoDireita = movimentacaoCima = movimentacaoBaixo = false;
+        const radius = 20, velocidade = 10;
+        var canvas = document.querySelector("canvas");
+        var contexto = canvas.getContext("2d");
+        let ponto = {
+            x: 280,
+            y: 200
+        };
+
+        atualizacao();
+
+        window.addEventListener("keydown", teclapressionada);
+
+        function teclapressionada(entrada) {
+            let chave = entrada.keyCode;
+
+            if (chave === CodigoTeclaEsquerda && chave !== CodigoTeclaDireita) {
+                movimentacaoEsquerda = true;
+            }
+            if (chave === CodigoTeclaDireita && chave !== CodigoTeclaEsquerda) {
+                movimentacaoDireita = true;
+            }
+            if (chave === CodigoTeclaCima && chave !== CodigoTeclaBaixo) {
+                movimentacaoCima = true;
+            }
+            if (chave === CodigoTeclaBaixo && chave !== CodigoTeclaCima) {
+                movimentacaoBaixo = true;
+            }
+        }
+
+        window.addEventListener("keyup", teclaliberada);
+
+        function teclaliberada(entrada) {
+            let chave = entrada.keyCode;
+
+            if (chave === CodigoTeclaEsquerda && chave !== CodigoTeclaDireita) {
+                movimentacaoEsquerda = false;
+            }
+            if (chave === CodigoTeclaDireita && chave !== CodigoTeclaEsquerda) {
+                movimentacaoDireita = false;
+            }
+            if (chave === CodigoTeclaCima && chave !== CodigoTeclaBaixo) {
+                movimentacaoCima = false;
+            }
+            if (chave === CodigoTeclaBaixo && chave !== CodigoTeclaCima) {
+                movimentacaoBaixo = false;
+            }
+        }
+
+        function movimentacao() {
+            if (movimentacaoEsquerda) {
+                ponto.x -= velocidade;
+            }
+            if (movimentacaoDireita) {
+                ponto.x += velocidade;
+            }
+            if (movimentacaoCima) {
+                ponto.y -= velocidade;
+            }
+            if (movimentacaoBaixo) {
+                ponto.y += velocidade;
+            }
+        }
+
+        function renderizacao() {
+            contexto.clearRect(0, 0, canvas.width, canvas.height);
+            ponto.x = Math.max(radius, Math.min(canvas.width - radius, ponto.x));
+            ponto.y = Math.max(radius, Math.min(canvas.height - radius, ponto.y));
+
+            contexto.beginPath();
+            contexto.arc(ponto.x, ponto.y, radius, 0, 2 * Math.PI,)
+            contexto.fill();
+        }
+
+        function atualizacao() {
+            requestAnimationFrame(atualizacao, canvas);
+            renderizacao();
+            movimentacao();
+
+        }
+    </script>
+</body>
+
+</html>

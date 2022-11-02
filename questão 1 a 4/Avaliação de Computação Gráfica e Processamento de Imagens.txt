@@ -1,0 +1,18 @@
+1 – Com suas palavras descreva o que é a DOM e qual sua relação com o HTML?
+Document Object Model serve para estruturar o conteúdo de um Web, independente da linguagem de programação, ou seja, é uma interface utilizadas para representar e manipular os objetos de uma página HTML. Sua relação é baseada nos acessos dos elementos contigo dentro de uma página, ou seja, podemos relacionar o acesso ao documento HTML através da DOM.
+
+
+2 – O que é o canvas HTML?
+Server no desenvolvimento de desenhos gráficos através da linguagem de script, é a tela com o objetivo de ser utilizado em animações, composições de fotos e desenhos.
+
+
+3 – Quais as linguagens e tecnologias comumente envolvidas no desenvolvimento de produtos baseados em canvas html?
+As linguagens utilizadas são HTML, CSS e JavaScript, sendo HTML a linguagem de marcação de hipertexto para a estrutura da página, CSS linguagem de estilo (parte estética) para separar a parte estrutural do HTML e o JavaScript para permitir o processamento e transformação de dados enviados e recebidos, de forma dinâmica e animada.
+Então:
+HTML - Estruturação como paragrafos, links, títulos, imagens, etc. .
+CSS - Estruturação de cores, fontes, tamanhos, etc.
+JavaScript - Estruturação dos dados com movimentação e animações.
+
+
+4 – Explique para que serve o código “document.getElementById()”
+Serve para selecionar elementos pela identificação pelo atributo id sendo um atributo único, a função realiza uma busca e retorna o elemento por meio do seu identificador (o valor id ). Vale ressaltar que elementos que não estão no documento não são procurados e encontrados através do get.ElementById.

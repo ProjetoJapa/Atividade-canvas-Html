@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao 5 letra A</title>
+    <style>
+        canvas {
+            background-color: rgba(233, 233, 233);
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas width="1200" height="300"> </canvas>
+
+    <script>
+        let canvas = document.querySelector('canvas');
+        let contexto = canvas.getContext('2d');
+
+        contexto.lineWidth = 3;
+
+        //retangulo em volta do triângulo
+        contexto.beginPath();
+        contexto.rect(50, 50, 350, 200);
+        contexto.stroke();
+        contexto.fillStyle = 'white';
+        contexto.fill();
+        contexto.strokeStyle = '#2D3970';
+        contexto.closePath();
+        contexto.stroke();
+        //triângulo:
+        contexto.beginPath();
+        contexto.moveTo(225, 100);
+        contexto.lineTo(150, 200);
+        contexto.lineTo(300, 200);
+        contexto.fillStyle = '#4568F5';
+        contexto.fill();
+
+        //cirulo
+        contexto.beginPath();
+        contexto.arc(600, 150, 80, 0, 2 * Math.PI);
+        contexto.stroke();
+        contexto.fillStyle = 'white';
+        contexto.fill();
+        contexto.strokeStyle = '#2D3970';
+        contexto.closePath();
+        contexto.stroke();
+        //retangulo dentro do circulo
+        contexto.beginPath();
+        contexto.rect(550, 100, 100, 100);
+        contexto.fillStyle = '#4568F5';
+        contexto.fill();
+        contexto.closePath();
+        contexto.strokeStyle = '#2D3970';
+        contexto.stroke();
+
+
+        //triângulo esquerdo:
+        contexto.beginPath();
+        contexto.moveTo(850, 50);
+        contexto.lineTo(750, 225);
+        contexto.lineTo(950, 225);
+        contexto.fillStyle = 'white';
+        contexto.fill();
+        contexto.closePath();
+        contexto.strokeStyle = "#4D75F5";
+        contexto.stroke();
+
+        //triângulo direito:
+        contexto.beginPath();
+        contexto.moveTo(1000, 50);
+        contexto.lineTo(900, 225);
+        contexto.lineTo(1100, 225);
+        contexto.fillStyle = 'white';
+        contexto.fill();
+        contexto.closePath();
+        contexto.strokeStyle = "#4D75F5";
+        contexto.stroke();
+        //triângulo centro pequeno:
+        contexto.beginPath();
+        contexto.moveTo(925, 180);
+        contexto.lineTo(900, 225);
+        contexto.lineTo(950, 225);
+        contexto.fillStyle = 'white';
+        contexto.fill();
+        contexto.closePath();
+        contexto.strokeStyle = "#4D75F5";
+        contexto.stroke();
+    </script>
+</body>
+
+</html>
